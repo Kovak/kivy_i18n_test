@@ -1,0 +1,19 @@
+#:import _ __main__._
+RootWidget:
+
+<RootWidget>:
+	layout: layout
+	BoxLayout:
+		id: layout
+		orientation: 'vertical'
+		size_hint: .5, .5
+		pos_hint: {'x': .25, 'y':.25}
+		Button:
+			id: english
+			text: _('English')
+		Button:
+			id: french
+			text: _('French')
+
+
+
