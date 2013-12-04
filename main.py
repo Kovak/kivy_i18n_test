@@ -3,9 +3,9 @@ from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from flufl.i18n import initialize
 import os
-from flufl.i18n import registry, SimpleStrategy
-strategy = SimpleStrategy('test')
-strategy._messages_dir = os.path.dirname(os.path.abspath(__file__)) + '/messages'
+from flufl.i18n import registry, PackageStrategy
+import translations.messages
+strategy = PackageStrategy('test', translations.messages) 
 application = registry.register(strategy)
 _ = application._
 _.push('fr')
