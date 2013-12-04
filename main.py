@@ -9,10 +9,6 @@ strategy = PackageStrategy('test', translations.messages)
 application = registry.register(strategy)
 _ = application._
 _.push('fr')
-print _.code, 'current language'
-print strategy._messages_dir
-with _.using('fr'):
-    print _('English')
 
 
 class RootWidget(FloatLayout):

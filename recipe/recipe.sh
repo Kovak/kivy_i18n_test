@@ -1,10 +1,10 @@
 #!/bin/bash
 
-VERSION_flufl=1.0
-URL_flufl=
+VERSION_flufl=1.1.1
+URL_flufl=https://pypi.python.org/packages/source/f/flufl.i18n/flufl.i18n-$VERSION_flufl.tar.gz
 DEPS_flufl=(python)
-MD5_flufl=
-BUILD_flufl=$BUILD_PATH/flufl
+MD5_flufl=f0a63f96790b847b338aac549a3724fc
+BUILD_flufl=$BUILD_PATH/flufl/$(get_directory $URL_flufl)
 RECIPE_flufl=$RECIPES_PATH/flufl
 
 function prebuild_flufl() {
