@@ -5,7 +5,7 @@ from flufl.i18n import initialize
 import os
 from flufl.i18n import registry, SimpleStrategy
 strategy = SimpleStrategy('test')
-strategy._messages_dir = os.path.dirname(__file__) + '/messages'
+strategy._messages_dir = os.path.dirname(os.path.abspath(__file__)) + '/messages'
 application = registry.register(strategy)
 _ = application._
 _.push('fr')
