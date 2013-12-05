@@ -13,6 +13,7 @@ from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 
+
 class RootWidget(FloatLayout):
     app = ObjectProperty(None)
     layout = ObjectProperty(None, allownone=True)
