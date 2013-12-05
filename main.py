@@ -9,15 +9,31 @@ strategy = PackageStrategy('test', translations.messages)
 application = registry.register(strategy)
 _ = application._
 _.push('fr')
-print _.code, 'current language'
-print strategy._messages_dir
-with _.using('fr'):
-    print _('English')
-
+from kivy.lang import Builder
+from kivy.properties import ObjectProperty
+from kivy.uix.boxlayout import BoxLayout
 
 class RootWidget(FloatLayout):
-    pass
+    app = ObjectProperty(None)
+    layout = ObjectProperty(None, allownone=True)
 
+    def set_english(self):
+    	_.pop()
+    	self.reload_layout()
+
+    def reload_layout(self):
+    	self.remove_widget(self.layout)
+    	self.layout = None
+    	self.layout = Buttons()
+    	self.add_widget(self.layout)
+
+    def set_french(self):
+    	_.push('fr')
+    	self.reload_layout()
+
+
+class Buttons(BoxLayout):
+	pass
 
 class Testi18nApp(App):
 

@@ -1,19 +1,24 @@
 #:import _ __main__._
+
 RootWidget:
+
 
 <RootWidget>:
 	layout: layout
-	BoxLayout:
+	app: app
+	Buttons:
 		id: layout
-		orientation: 'vertical'
-		size_hint: .5, .5
-		pos_hint: {'x': .25, 'y':.25}
-		Button:
-			id: english
-			text: _('English')
-		Button:
-			id: french
-			text: _('French')
 
 
-
+<Buttons>:
+	orientation: 'vertical'
+	size_hint: .5, .5
+	pos_hint: {'x': .25, 'y':.25}
+	Button:
+		id: english
+		text: _('English')
+		on_release: app.root.set_english()
+	Button:
+		id: french
+		text: _('French')
+		on_release: app.root.set_french()
