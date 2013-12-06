@@ -1,10 +1,8 @@
 __version__ = '1.0'
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
-import os
 from flufl.i18n import registry, PackageStrategy, initialize
 import translations.messages
-from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 
