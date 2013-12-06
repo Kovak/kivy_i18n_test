@@ -1,4 +1,4 @@
-#:import _ __main__._
+
 
 RootWidget:
 
@@ -11,14 +11,15 @@ RootWidget:
 
 
 <Buttons>:
+	_: app._ if app._ != None else str
 	orientation: 'vertical'
 	size_hint: .5, .5
 	pos_hint: {'x': .25, 'y':.25}
 	Button:
 		id: english
-		text: _('English')
-		on_release: app.root.set_english()
+		text: root._('English')
+		on_release: app.set_language('en')
 	Button:
 		id: french
-		text: _('French')
-		on_release: app.root.set_french()
+		text: root._('French')
+		on_release: app.set_language('fr')
